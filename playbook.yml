@@ -1,6 +1,6 @@
 
 - name: Installation du serveur
-  hosts: all
+  hosts: web
   tasks:
     - name: Installation de git
       apt: name=git update_cache=yes
