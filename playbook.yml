@@ -1,6 +1,7 @@
 
 - name: Installation du serveur
   hosts: web
+  remote_user: root
   tasks:
     - name: Installation de git
       yum: name=git update_cache=yes
