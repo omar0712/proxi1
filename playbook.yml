@@ -1,8 +1,11 @@
 
-- name: install nginx
-  hosts: all
-  become: yes
-  roles:
-    - nginx
+- name: Installation du serveur
+  hosts: web
+  remote_user: root
+  tasks:
+    - name: Installation de git
+      yum: name=git update_cache=yes
+    - name: installation de Vim
+      yum: name=vim
 
 
