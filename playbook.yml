@@ -1,9 +1,10 @@
 
 - name: Installation du serveur
+  hosts: all
   tasks:
     - name: Installation de git
-      yum: name=git update_cache=yes
+      apt: name=git update_cache=yes
     - name: installation de Vim
-      yum: name=vim
+      apt: name=vim
 
 
