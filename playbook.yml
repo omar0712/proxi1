@@ -3,8 +3,8 @@
   hosts: web
   tasks:
     - name: Installation de git
-      apt: name=git update_cache=yes
+      yum: name=git update_cache=yes
     - name: installation de Vim
-      apt: name=vim
+      yum: name=vim
 
 
