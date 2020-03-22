@@ -2,6 +2,7 @@
 - name: Installation du serveur
   hosts: web
   remote_user: jenkins
+  become: yes
   tasks:
     - name: Installation de git
       yum: name=git update_cache=yes
