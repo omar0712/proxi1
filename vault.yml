@@ -6,4 +6,4 @@
 
   tasks:
   - name: Print debug message
-    debug:  msg="{{ lookup('hashi_vault', 'secret=kv/Client2:password token={{s.LkUxkO69qhqQDLrc8Y74ETyx}} url=http://{{127.0.0.1:8200}}:8200') }}"
+    debug:  msg="{{ lookup('hashi_vault', 'secret=kv/Client2:password token={{s.LkUxkO69qhqQDLrc8Y74ETyx}} url=http://{{127.0.0.1:8200}}:8200')}}"
