@@ -1,10 +1,6 @@
 ---
-# This playbook prints a simple debug message
-- name: Echo 
-  hosts: 127.0.0.1
-  connection: local
-
+- hosts: all
   tasks:
-  - name: Vault that requires authentication via username and password
+  - name: "Test_Ansible"
     debug:
-    msg: "{{ lookup('hashi_vault', 'secret=kv/Client2:password token=s.LkUxkO69qhqQDLrc8Y74ETy url=http://127.0.0.1:8200')}
+    msg: "{{ lookup('hashi_vault', 'secret=kv/data/Client2:password token=s.LkUxkO69qhqQDLrc8Y74ETyx url=http://127.0.0.1:8200')}}"   }
