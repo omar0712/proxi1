@@ -1,4 +1,10 @@
-tasks:
+---
+# This playbook prints a simple debug message
+- name: Echo 
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
   - name: Print debug message
     debug:
       msg: "{{ lookup('hashi_vault', 'secret=kv/data/Client2 token=s.LkUxkO69qhqQDLrc8Y74ETyx url=http://127.0.0.1:8200')}}"
