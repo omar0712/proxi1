@@ -1,6 +1,31 @@
 ---
+# vault login with a previously obtained token
+# in this case, I obtained a token using: 
+#
+# IMPORTANT: kv (version 1)!
+#
+# $ vault login -method=userpass username=test_read_user password=mypass
+# Success! You are now authenticated. The token information displayed below
+# is already stored in the token helper. You do NOT need to run "vault login"
+# again. Future Vault requests will automatically use this token.
+# 
+# Key                    Value
+# ---                    -----
+# token                  s.rly6b2Cf2sTlX16Z3XTA50GX
+# token_accessor         RAwA5BGIGj5mDQ7lWnW5LG81
+# token_duration         768h
+# token_renewable        true
+# token_policies         ["default" "test_read_kv" "test_read_kv-v2"]
+# identity_policies      []
+# policies               ["default" "test_read_kv" "test_read_kv-v2"]
+# token_meta_username    test_read_user
+
 - hosts: localhost
+  vars:
+  - demo: "{{ lookup('hashi_vault', 'secret=kv/data/Client2 token=s.LkUxkO69qhqQDLrc8Y74ETyx url=https://localhost:8200') }}"
   tasks:
-  - name: "Test_Ansible"
-    debug:
-    msg: "{{ lookup('hashi_vault', 'secret=kv/data/Client2:password token=s.LkUxkO69qhqQDLrc8Y74ETyx url=http://127.0.0.1:8200')}}"
+
+  - name: show bar
+    debug: 
+      msg: "{{ demo.bar }}"
+
