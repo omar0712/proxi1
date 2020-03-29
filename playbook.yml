@@ -1,12 +1,10 @@
 
-- name: Installation du serveur
+- name: Test Vault
   hosts: web
   remote_user: jenkins
   become: yes
   tasks:
-    - name: Installation de git
-      yum: name=git update_cache=yes
-    - name: installation de Vim
-      yum: name=nmap
-
+    - name: "Test_Ansible"
+    debug:
+    msg: "{{ lookup('hashi_vault', 'secret=kv/Client2:password token=s.LkUxkO69qhqQDLrc8Y74ETyx url=http://192.168.1.93:8200')}}"  
 
