@@ -1,9 +1,5 @@
----
 - hosts: localhost
   connection: local
   tasks:
     - name: Retrieve secret/hello using native hashi_vault plugin
-      debug: msg="{{ lookup('hashi_vault', 'secret=kv/Client2 token={{ s.LkUxkO69qhqQDLrc8Y74ETyx }} url=http://127.0.0.1:8200') }}"
-
-    - name: Retrieve secret/hello using jhaals vault lookup
-      debug: msg="{{ lookup('vault', 'kv/Client2') }}"
+      debug: msg="{{ lookup('hashi_vault', 'secret=kv/data/Client2 token={{s.LkUxkO69qhqQDLrc8Y74ETyx}} url={{http://127.0.0.1:8200}} ')}}"
