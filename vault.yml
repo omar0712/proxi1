@@ -21,11 +21,8 @@
 # token_meta_username    test_read_user
 
 - hosts: localhost
-  vars:
-  - demo: "{{ lookup('hashi_vault', 'secret=kv/data/Client2 token=s.LkUxkO69qhqQDLrc8Y74ETyx url=https://localhost:8200') }}"
   tasks:
-
-  - name: show bar
-    debug: 
-      msg: "{{ demo.bar }}"
+   - name: Return all kv v2 secrets from a path
+     debug:
+     msg: "{{ lookup('hashi_vault', 'secret=kv/data/Client2 token=s.LkUxkO69qhqQDLrc8Y74ETyx url=http://127.0.0.1:8200') }}"
 
