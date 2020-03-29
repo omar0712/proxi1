@@ -1,10 +1,7 @@
 
-- name: Test Vault
-  hosts: web
-  remote_user: jenkins
-  become: yes
+- hosts: all
   tasks:
-    - name: "Test_Ansible"
+  - name: "Test_Ansible"
     debug:
-    msg: "{{ lookup('hashi_vault', 'secret=kv/Client2:password token=s.LkUxkO69qhqQDLrc8Y74ETyx url=http://192.168.1.93:8200')}}"  
+    msg: "{{ lookup('hashi_vault', 'secret=kv/Client2:password token=s.LkUxkO69qhqQDLrc8Y74ETyx url=http://192.168.1.93:8200')}}" 
 
